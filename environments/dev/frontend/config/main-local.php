@@ -7,6 +7,12 @@ $config = [
             'cookieValidationKey' => '',
         ],
     ],
+    'modules' => [
+        'gii' => [
+            'class' => 'yii\gii\Module',
+            'allowedIPs' => ['*'],
+        ],
+    ],
 ];
 
 if (!YII_ENV_TEST) {

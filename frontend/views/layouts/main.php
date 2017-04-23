@@ -24,58 +24,73 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
+<header class="header">
+    <div class="wrapper container">
+        <div class="site-logo row">
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            <div class="university-link">
+                LNU V.I DAHL
+            </div>
+        </div>
+        <div class="menu row container">
+            <a class="menu-item row" href="">Main page</a>
+            <a class="menu-item row" href="">Information</a>
+            <a class="menu-item row" href="">For abiturients</a>
+            <a class="menu-item row" href="">For students</a>
+            <a class="menu-item row" href="">Media</a>
+            <a class="menu-item row" href="">Contact</a>
+            <a class="menu-item row" href="">Search</a>
+        </div>
+        <div class="lang-menu row">
+            <a class="lang-item lang-russian">Рус</a>
+            <a class="lang-item lang-ukrainian">Укр</a>
+            <a class="lang-item lang-english toggle">Eng</a>
+            <a class="lang-item lang-deutschland">Deu</a>
 
-<div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => 'My Company',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
-    ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
-    ?>
+        </div>
 
-    <div class="container">
+    </div>
+</header>
+<section class="content">
+    <div class="wrapper">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>
-</div>
-
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
+</section>
+<aside class="sidebar">
+    <div class="wrapper">
+        <div class="events-block">
+            <a class="event-item" id="event-1">
+                <img src="img/event_bg.png" alt="" class="event-img">
+                <div href="" class="event-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, dolore dolorum! Beatae eaque est facere</div>
+                <div class="event-data">28.01.2016</div>
+            </a>
+            <a class="event-item-alt" id="event-2">
+                <img src="img/event_bg.png" alt="" class="event-img">
+                <div href="" class="event-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, dolore dolorum! Beatae eaque est facere</div>
+                <div class="event-data">28.01.2016</div>
+            </a>
+            <a class="event-item-alt" id="event-3">
+                <img src="img/event_bg.png" alt="" class="event-img">
+                <div href="" class="event-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, dolore dolorum! Beatae eaque est facere</div>
+                <div class="event-data">28.01.2016</div>
+            </a>
+            <a class="event-item-alt" id="event-4">
+                <img src="img/event_bg.png" alt="" class="event-img">
+                <div href="" class="event-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, dolore dolorum! Beatae eaque est facere</div>
+                <div class="event-data">28.01.2016</div>
+            </a>
+            <a class="event-item-alt" id="event-5">
+                <img src="img/event_bg.png" alt="" class="event-img">
+                <div href="" class="event-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, dolore dolorum! Beatae eaque est facere</div>
+                <div class="event-data">28.01.2016</div>
+            </a>
+        </div>
     </div>
-</footer>
-
+</aside>
 <?php $this->endBody() ?>
 </body>
 </html>

@@ -17,4 +17,10 @@ return [
             'useFileTransport' => true,
         ],
     ],
+    'modules' => [
+        'gii' => [
+            'class' => 'yii\gii\Module',
+            'allowedIPs' => ['*'],
+        ],
+    ],
 ];
