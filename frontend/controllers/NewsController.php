@@ -4,7 +4,7 @@ namespace frontend\controllers;
 
 use common\models\News;
 
-class NewsController extends \yii\web\Controller
+class NewsController extends BaseController
 {
     public function actionIndex()
     {

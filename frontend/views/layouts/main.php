@@ -23,6 +23,11 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
+<div class="preloader-back">
+    <div class="preloader-wrapper">
+        <div class="preloader"></div>
+    </div>
+</div>
 <?php $this->beginBody() ?>
 <header class="header">
     <div class="wrapper container">
@@ -33,21 +38,9 @@ AppAsset::register($this);
             </div>
         </div>
         <div class="menu row container">
-            <a class="menu-item row" href="">Main page</a>
-            <a class="menu-item row" href="">Information</a>
-            <a class="menu-item row" href="">For abiturients</a>
-            <a class="menu-item row" href="">For students</a>
-            <a class="menu-item row" href="">Media</a>
-            <a class="menu-item row" href="">Contact</a>
-            <a class="menu-item row" href="">Search</a>
+            <?= isset($this->params['menu_render']) ? $this->params['menu_render'] : null?>
         </div>
-        <div class="lang-menu row">
-            <a class="lang-item lang-russian">Рус</a>
-            <a class="lang-item lang-ukrainian">Укр</a>
-            <a class="lang-item lang-english toggle">Eng</a>
-            <a class="lang-item lang-deutschland">Deu</a>
 
-        </div>
 
     </div>
 </header>
@@ -57,37 +50,13 @@ AppAsset::register($this);
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
-        <?= $content ?>
+        <div class="news-block"><?= $content ?><div>
     </div>
 </section>
 <aside class="sidebar">
     <div class="wrapper">
         <div class="events-block">
-            <a class="event-item" id="event-1">
-                <img src="img/event_bg.png" alt="" class="event-img">
-                <div href="" class="event-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, dolore dolorum! Beatae eaque est facere</div>
-                <div class="event-data">28.01.2016</div>
-            </a>
-            <a class="event-item-alt" id="event-2">
-                <img src="img/event_bg.png" alt="" class="event-img">
-                <div href="" class="event-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, dolore dolorum! Beatae eaque est facere</div>
-                <div class="event-data">28.01.2016</div>
-            </a>
-            <a class="event-item-alt" id="event-3">
-                <img src="img/event_bg.png" alt="" class="event-img">
-                <div href="" class="event-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, dolore dolorum! Beatae eaque est facere</div>
-                <div class="event-data">28.01.2016</div>
-            </a>
-            <a class="event-item-alt" id="event-4">
-                <img src="img/event_bg.png" alt="" class="event-img">
-                <div href="" class="event-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, dolore dolorum! Beatae eaque est facere</div>
-                <div class="event-data">28.01.2016</div>
-            </a>
-            <a class="event-item-alt" id="event-5">
-                <img src="img/event_bg.png" alt="" class="event-img">
-                <div href="" class="event-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, dolore dolorum! Beatae eaque est facere</div>
-                <div class="event-data">28.01.2016</div>
-            </a>
+            <?= isset($this->params['events_render']) ? $this->params['events_render'] : null?>
         </div>
     </div>
 </aside>
