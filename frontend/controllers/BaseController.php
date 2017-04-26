@@ -1,7 +1,7 @@
 <?php namespace frontend\controllers;
 
+use common\models\BlogMenuItems;
 use common\models\Events;
-use common\models\MainMenu;
 use Yii;
 use yii\base\Module;
 use yii\web\Controller;
@@ -24,10 +24,10 @@ class BaseController extends Controller
         ]);
     }
     public function renderMenu() {
-        $main_menu = new MainMenu();
-        $dataProvider = $main_menu->getMenuElements();
-        return $this->renderPartial('@app/views/main_menu/index', [
-            'main_menu' => $dataProvider->models,
+        $blog_menu_items = new BlogMenuItems();
+        $dataProvider = $blog_menu_items->getMenuElements();
+        return $this->renderPartial('@app/views/blog_menu_items/index', [
+            'blog_menu_items' => $dataProvider->models,
         ]);
     }
 }
