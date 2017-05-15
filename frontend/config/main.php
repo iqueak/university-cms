@@ -43,6 +43,7 @@ return [
             'rules' => [
                 '/' => 'news/index',
                 '<controller>/<action>' => '<controller>/<action>',
+                '<_c:[\w\-]+>/<id:\d+>' => '<_c>/view',
             ],
         ],
     ],

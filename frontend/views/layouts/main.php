@@ -50,14 +50,13 @@ AppAsset::register($this);
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
-        <div class="news-block"><?= $content ?><div>
+        <?= $content ?>
     </div>
 </section>
 <aside class="sidebar">
     <div class="wrapper">
-        <div class="events-block">
+        
             <?= isset($this->params['events_render']) ? $this->params['events_render'] : null?>
-        </div>
     </div>
 </aside>
 <?php $this->endBody() ?>
