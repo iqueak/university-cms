@@ -5,5 +5,11 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'authManager' => [
+            'class' => \yii\rbac\DbManager::class,
+            'cache' => 'cache',
+            'defaultRoles' => ['user']
+        ],
     ],
+
 ];
