@@ -8,10 +8,17 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
+    'name' => 'University',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
+    'defaultRoute' => 'dashboard/dashboard',
+    'language' => 'en-US',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'gridview' => [
+            'class' => \kartik\grid\Module::class
+        ]
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
@@ -20,6 +27,16 @@ return [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
+            'loginUrl' => ['security/login'],
+        ],
+        'i18n' => [
+            'translations' => [
+                'acp*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@backend/messages',
+                    'sourceLanguage' => 'en-US',
+                ],
+            ],
         ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
@@ -35,12 +52,15 @@ return [
             ],
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => 'security/error',
         ],
         'urlManager' => [
+            'class' => yii\web\UrlManager::class,
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'login' => 'backend/security/login',
+                'logout' => 'backend/security/logout',
                 '<controller>/<action>' => '<controller>/<action>',
             ],
         ],

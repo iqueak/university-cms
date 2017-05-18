@@ -60,19 +60,19 @@ $user = Yii::$app->user->identity;
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="/img/noavatar.jpg" class="user-image" alt="User Image"/>
-                            <span class="hidden-xs"><? //$user->getUsername() ?></span>
+                            <span class="hidden-xs"><?= $user->getUsername() ?></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li class="user-header">
                                 <img src="/img/noavatar.jpg" class="img-circle" alt="User Image"/>
                                 <p>
-                                    <? //$user->getUsername() ?>
+                                    <?= $user->getUsername() ?>
                                     <small>Member since <? ?></small>
                                 </p>
                             </li>
                             <li class="user-footer">
                                 <div class="pull-right">
-                                    <?= Html::a('Sign out', Url::toRoute('site/logout'), [
+                                    <?= Html::a('Sign out', Url::toRoute('security/logout'), [
                                         'data-method' => 'post',
                                         'class' => "btn btn-default btn-flat"
                                     ]) ?>

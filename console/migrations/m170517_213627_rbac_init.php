@@ -147,6 +147,8 @@ class m170517_213627_rbac_init extends Migration
 
         $authManager->addChild($admin, $accessBackend);
         $authManager->addChild($admin, $administrateRBAC);
+        
+        $authManager->assign($admin, 1);
     }
 
     public function down()
