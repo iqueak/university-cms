@@ -6,7 +6,7 @@ return [
             'class' => 'yii\caching\FileCache',
         ],
         'authManager' => [
-            'class' => \yii\rbac\DbManager::class,
+            'class' => common\components\DbManager::class,
             'cache' => 'cache',
             'defaultRoles' => ['user']
         ],

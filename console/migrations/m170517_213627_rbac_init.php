@@ -129,17 +129,7 @@ class m170517_213627_rbac_init extends Migration
         $authManager->addChild($administrateRBAC, $BDeleteUsers);
 
         // Roles
-//        $user = $authManager->createRole('student');
-//        $user->description = 'Student';
-//        $authManager->add($user);
-//
-//        $teacher = $authManager->createRole('teacher');
-//        $teacher->description = 'Teacher';
-//        $authManager->add($teacher);
-//
-//        $studyingAdmin = $authManager->createRole('studyingAdmin');
-//        $studyingAdmin->description = 'Studying Admin';
-//        $authManager->add($studyingAdmin);
+//        
 
         $admin = $authManager->createRole('admin');
         $admin->description = 'Admin';

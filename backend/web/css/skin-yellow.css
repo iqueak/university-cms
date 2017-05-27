@@ -2,9 +2,8 @@
  * Skin: Yellow
  * ------------
  */
-
 body.skin-yellow {
-  background: none repeat scroll 0 0 #222D32;
+	background: none repeat scroll 0 0 #222D32;
 }
 
 .skin-yellow .main-header .navbar {

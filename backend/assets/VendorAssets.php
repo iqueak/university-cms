@@ -18,7 +18,9 @@ class VendorAssets extends AssetBundle
 {
     public $sourcePath = '@bower';
     public $css = [
-        'icheck/skins/square/orange.css'
+        'icheck/skins/square/orange.css',
+        'fnt-awsm/css/font-awesome.css'
+
     ];
     public $js = [
         'slimscroll/jquery.slimscroll.min.js',
